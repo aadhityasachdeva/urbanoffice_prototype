@@ -124,6 +124,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      has_booking_conflict: {
+        Args: {
+          p_booking_date: string
+          p_end_time: string
+          p_start_time: string
+          p_workspace_id: string
+        }
+        Returns: boolean
+      }
       is_admin: { Args: never; Returns: boolean }
     }
     Enums: {

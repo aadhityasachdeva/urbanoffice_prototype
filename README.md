@@ -1,6 +1,6 @@
 # Urban Office Space
 
-Build a clean, professional, responsive web application called "UrbanOffice" — a smart workspace booking and management platform. Keep the code as SIMPLE and READABLE as possible. This is for a student demo, not a production system, so prioritize clarity over cleverness.
+ a clean, professional, responsive web application called "UrbanOffice" — a smart workspace booking and management platform. Keep the code as SIMPLE and READABLE as possible. This is for a student demo, not a production system, so prioritize clarity over cleverness.
 
 TECH STACK
 
@@ -10,11 +10,11 @@ TECH STACK
 
 - Tailwind CSS for styling
 
-- No other libraries or state management tools unless absolutely necessary
+- No other libraries or state management tools 
 
-- No custom backend server — use Supabase directly from the frontend
+- No custom backend server  using Supabase directly from the frontend
 
-DATABASE TABLES (create these in Supabase)
+DATABASE TABLES 
 
 1. profiles
 
@@ -66,9 +66,9 @@ DATABASE TABLES (create these in Supabase)
 
 SAMPLE DATA (seed the database with this so the demo isn't empty)
 
-Create at least 8 workspaces spread across all three categories, using venue-style names such as: "Pera Desk Hub", "Kebabs on the Grille - Co-work Corner", "1001 Nights Meeting Room", "El Bodegon Private Room", "UP Shanghai Event Hall", "Cotton's Desk Space", "Pot Stills Meeting Room", "The Beach House Event Space" — with realistic Shanghai locations, capacities, hourly prices, and amenities like Wi-Fi, coffee, tea, charging stations, projector (for meeting/event spaces).
+ at least 8 workspaces spread across all three categories, using venue-style names such as: "Pera Desk Hub", "Kebabs on the Grille - Co-work Corner", "1001 Nights Meeting Room", "El Bodegon Private Room", "UP Shanghai Event Hall", "Cotton's Desk Space", "Pot Stills Meeting Room", "The Beach House Event Space" — with realistic Shanghai locations, capacities, hourly prices, and amenities like Wi-Fi, coffee, tea, charging stations, projector (for meeting/event spaces).
 
-Create 3 sample user accounts (one should be role='admin') and a handful of sample bookings across different dates so "My Bookings" and the admin dashboard aren't empty.
+ 3 sample user accounts (one should be role='admin') and a handful of sample bookings across different dates so "My Bookings" and the admin dashboard aren't empty.
 
 PAGES / SCREENS
 
@@ -120,7 +120,7 @@ PAGES / SCREENS
 
 SECURITY
 
-Use Supabase Row Level Security (RLS):
+ Supabase Row Level Security (RLS):
 
 - Users can only view and cancel their own bookings
 
@@ -128,9 +128,6 @@ Use Supabase Row Level Security (RLS):
 
 - Only users with role='admin' can insert/update/delete workspaces, or view all bookings/users
 
-DESIGN
-
-Clean, modern, professional look suitable for a corporate co-working brand — use a calm color palette (navy/teal or similar), clear typography, card-based layouts, and make sure every screen is responsive on both desktop and mobile.
 
 
 

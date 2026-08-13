@@ -29,10 +29,10 @@ export const Route = createFileRoute("/_authenticated/browse")({
 function BrowsePage() {
   const { category } = Route.useSearch();
   const [workspaces, setWorkspaces] = useState<Workspace[]>([]);
-  const [activeCategory, setActiveCategory] = useState(category);
+  const [activeCategory, setActiveCategory] = useState(category ?? "");
 
   useEffect(() => {
-    setActiveCategory(category);
+    setActiveCategory(category ?? "");
   }, [category]);
 
   useEffect(() => {

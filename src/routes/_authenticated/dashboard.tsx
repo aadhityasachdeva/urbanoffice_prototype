@@ -75,7 +75,7 @@ function DashboardPage() {
         {upcoming.length === 0 ? (
           <Card className="p-6 text-sm text-muted-foreground">
             No upcoming bookings yet.{" "}
-            <Link to="/browse" className="text-primary underline">
+            <Link to="/browse" search={{}} className="text-primary underline">
               Browse workspaces
             </Link>
             .

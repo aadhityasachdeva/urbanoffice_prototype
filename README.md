@@ -132,29 +132,7 @@ DESIGN
 
 Clean, modern, professional look suitable for a corporate co-working brand — use a calm color palette (navy/teal or similar), clear typography, card-based layouts, and make sure every screen is responsive on both desktop and mobile.
 
-IMPORTANT CONSTRAINTS
 
-- Do not add push notifications, QR code check-in, payment processing, occupancy analytics, AI recommendations, or IoT features — these are explicitly out of scope for this version.
-
-- Do not create fake buttons that show "success" messages without actually writing to the database.
-
-- Keep all code readable, with clear variable and function names, and add short comments explaining the booking-conflict-check logic specifically, since that is the most important part of the app to explain.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://office-nest-app.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/36f3f0be-de76-4bc5-a747-048dfce8b35a).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
 git clone <this-repository-url>

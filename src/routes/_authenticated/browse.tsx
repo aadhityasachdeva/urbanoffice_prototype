@@ -9,8 +9,9 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/_authenticated/browse")({
   validateSearch: (search: Record<string, unknown>) => ({
-    category: typeof search.category === "string" ? search.category : "",
+    category: typeof search["category"] === "string" ? (search["category"] as string) : undefined,
   }),
+
   head: () => ({
     meta: [
       { title: "Browse Workspaces — UrbanOffice" },

@@ -40,27 +40,27 @@ export function isUpcoming(booking: Booking) {
  * Two time ranges on the same workspace and the same date overlap when:
  *     existing.start_time < new_end_time  AND  existing.end_time > new_start_time
  *
- * We ask the database for any CONFIRMED booking on that workspace/date matching
- * those two conditions. If at least one row comes back, the slot is taken and we
- * must NOT create the booking. Cancelled bookings are ignored, so a cancelled
- * slot becomes free again.
+ * The check runs in the database (function `has_booking_conflict`) because row
+ * level security hides other people's bookings from the browser. The function
+ * looks only at CONFIRMED bookings for that workspace + date and applies exactly
+ * the two comparisons above, so a cancelled booking frees its slot again.
+ *
+ * Returns true when the requested slot is already taken.
  */
-export async function findConflictingBooking(
+export async function hasBookingConflict(
   workspaceId: string,
   bookingDate: string,
   startTime: string,
   endTime: string,
 ) {
-  const { data, error } = await supabase
-    .from("bookings")
-    .select("id, start_time, end_time")
-    .eq("workspace_id", workspaceId)
-    .eq("booking_date", bookingDate)
-    .eq("status", "confirmed")
-    .lt("start_time", endTime) // existing starts before the new booking ends
-    .gt("end_time", startTime) // existing ends after the new booking starts
-    .limit(1);
+  const { data, error } = await supabase.rpc("has_booking_conflict", {
+    p_workspace_id: workspaceId,
+    p_booking_date: bookingDate,
+    p_start_time: startTime,
+    p_end_time: endTime,
+  });
 
   if (error) throw error;
-  return data && data.length > 0 ? data[0] : null;
+  return data === true;
 }
+
